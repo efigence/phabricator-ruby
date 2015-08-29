@@ -30,6 +30,10 @@ module Phabricator
       @name = attributes['userName']
     end
 
+    def self.list_users()
+      return @@cached_users
+    end
+
     private
 
     def self.client
