@@ -30,6 +30,15 @@ module Phabricator
       @name = attributes['name']
     end
 
+    def self.create(name, attrs={})
+      binding.pry
+      response = client.request(:post, 'project.create', {
+        name: name }.merge(attrs))
+      data = response['result']
+
+      self.new(data)
+    end
+
     private
 
     def self.client
