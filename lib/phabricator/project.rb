@@ -31,7 +31,6 @@ module Phabricator
     end
 
     def self.create(name, attrs={})
-      binding.pry
       response = client.request(:post, 'project.create', {
         name: name }.merge(attrs))
       data = response['result']
