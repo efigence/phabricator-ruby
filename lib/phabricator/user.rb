@@ -31,6 +31,7 @@ module Phabricator
     end
 
     def self.list_users()
+      populate_all
       return @@cached_users
     end
 
