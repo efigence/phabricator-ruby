@@ -25,8 +25,9 @@ module Phabricator::Maniphest
       end
     end
 
-    attr_reader :id
-    attr_accessor :title, :description, :priority
+    attr_reader :id, :phid, :authorPHID
+    attr_accessor :title, :description, :priority, :status
+    attr_accessor :ownerPHID, :ccPHIDs
 
     def self.create(title, description=nil, projects=[], priority='normal', owner=nil, ccs=[], other={})
       response = client.request(:post, 'maniphest.createtask', {
