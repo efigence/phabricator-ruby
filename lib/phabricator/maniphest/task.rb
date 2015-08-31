@@ -50,6 +50,11 @@ module Phabricator::Maniphest
       @title = attributes['title']
       @description = attributes['description']
       @priority = attributes['priority']
+      @phid = attributes['phid']
+      @authorPHID = attributes['authorPHID']  # creator of task
+      @ownerPHID = attributes['ownerPHID']  # user assigned task
+      @ccPHIDs = attributes['ccPHIDs']
+      @status = attributes['status']
     end
 
     def update(attributes)
