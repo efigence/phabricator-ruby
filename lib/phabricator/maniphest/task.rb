@@ -1,6 +1,7 @@
 require 'phabricator/conduit_client'
 require 'phabricator/project'
 require 'phabricator/user'
+require 'phabricator/repository'
 
 module Phabricator::Maniphest
   class Task
